@@ -1,0 +1,33 @@
+/* Can be forced with data-theme="light" */
+[data-theme='light'],
+:root:not([data-theme='dark']) {
+	--primary: #f78300;
+	--primary-hover: #e23838;
+	--primary-focus: rgba(216, 27, 96, 0.125);
+	--primary-inverse: #fff;
+}
+
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+	:root:not([data-theme]) {
+		--primary: #f78300;
+		--primary-hover: #e23838;
+		--primary-focus: rgba(216, 27, 96, 0.25);
+		--primary-inverse: #fff;
+	}
+}
+
+/* Enabled if forced with data-theme="dark" */
+[data-theme='dark'] {
+	--primary: #f78300;
+	--primary-hover: #e23838;
+	--primary-focus: rgba(216, 27, 96, 0.25);
+	--primary-inverse: #fff;
+}
+
+:root {
+	--form-element-active-border-color: var(--primary);
+	--form-element-focus-color: var(--primary-focus);
+	--switch-color: var(--primary-inverse);
+	--switch-checked-background-color: var(--primary);
+}
